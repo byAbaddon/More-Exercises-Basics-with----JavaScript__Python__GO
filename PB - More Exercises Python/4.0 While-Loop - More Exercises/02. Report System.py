@@ -14,10 +14,10 @@ for i in range(100):
             print('Error in transaction!')
         else:
             current_sum += money
-            statistics_obj[type_pay]['money'] += money
+            statistics_obj[type_pay]['money'] += current_sum
             statistics_obj[type_pay]['count'] += 1
             print('Product sold!')
-            if statistics_obj[type_pay]['money'] >= target_sum:
+            if current_sum >= target_sum:
                 break
     except:
         break
