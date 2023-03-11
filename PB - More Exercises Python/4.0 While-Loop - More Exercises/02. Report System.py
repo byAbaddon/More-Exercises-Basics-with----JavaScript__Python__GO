@@ -1,3 +1,35 @@
+
+target_sum = int(input())
+statistics_obj = {'CS': {'money': 0, 'count': 0}, 'CC': {'money': 0, 'count': 0}}
+current_sum = 0
+
+for i in range(100):
+    try:
+        money = int(input())
+        if i & 1:
+            type_pay = 'CC'
+        else:
+            type_pay = 'CS'
+        if money > 100 and type_pay == 'CS' or money < 10 and type_pay == 'CC':
+            print('Error in transaction!')
+        else:
+            current_sum += money
+            statistics_obj[type_pay]['money'] += money
+            statistics_obj[type_pay]['count'] += 1
+            print('Product sold!')
+            if statistics_obj[type_pay]['money'] >= target_sum:
+                break
+    except:
+        break
+
+if current_sum < target_sum:
+    print('Failed to collect required money for charity.')
+else:
+    for k, v in statistics_obj.items():
+        print(f'Average {k}: {v["money"] / v["count"]:.2f}')
+
+# --------------------------------------------------------------(2)-----------------------------------------------
+
 necessary_money = float(input())
 cash_payment_count = 0
 cash_payment = 0
