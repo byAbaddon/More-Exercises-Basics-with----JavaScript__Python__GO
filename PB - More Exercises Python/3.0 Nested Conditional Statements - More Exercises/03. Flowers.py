@@ -1,7 +1,7 @@
 c, r, t, season, holiday = [input() if i > 2 else int(input()) for i in range(5)]
 data_dict = {'s_s': {'c': c * 2, 'r': 4.1 * r, 't': 2.5 * t}, 'a_w': {'c': c * 3.75, 'r': 4.5 * r, 't': 4.15 * t} }
 
-if season == 'Spring' or season == 'Summer':
+if season in ['Spring','Summer']:
     price = sum(data_dict['s_s'].values())
 else:
     price = sum(data_dict['a_w'].values())
