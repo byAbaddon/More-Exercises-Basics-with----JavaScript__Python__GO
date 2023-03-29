@@ -1,3 +1,20 @@
+word, collection, code = '', '', ['c', 'n', 'o']
+
+for ch in [x for x in iter(input, 'End') if x.isalpha()]:
+    if ch in code:
+        code.remove(ch)
+    else:
+        word += ch
+    if not len(code):
+        code = ['c', 'n', 'o']
+        collection +=  word + ' '
+        word = ''
+
+print(collection)
+
+
+# --------------------------------------------------------(2)-----------------------------------------
+
 chars = input()
 word_collection = ''
 word = ''
