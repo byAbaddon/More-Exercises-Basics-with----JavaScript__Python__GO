@@ -7,8 +7,8 @@ for ch in [x for x in iter(input, 'End') if x.isalpha()]:
         word += ch
     if not len(code):
         code = ['c', 'n', 'o']
-        collection +=  word + ' '
-        word = ''
+        collection += word
+        word = ' '
 
 print(collection)
 
