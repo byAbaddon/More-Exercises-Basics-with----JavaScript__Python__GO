@@ -8,7 +8,22 @@ function dishwasher(arg, dishes = 0, pots = 0) {
   return `Not enough detergent, ${detergent * -1} ml. more necessary!`
 }
 
-//---------------------------------------------------------(2)
+//---------------------------------------------------------------(2)
+
+function dishwasher(arg, dishes = 0, pots = 0) {
+  if (isNaN(arg[arg.length-1])) arg.pop()
+  let detergent = arg.shift() * 750
+  for (i in arg) [2,5].includes(+i) ? pots += +arg[i] : dishes += +arg[i]  
+  detergent -= dishes * 5 + pots * 15
+
+  if (detergent >= 0)
+    return `Detergent was enough!\n${dishes} dishes and ${pots} pots were washed.\nLeftover detergent ${detergent} ml.`
+  return `Not enough detergent, ${detergent * -1} ml. more necessary!`
+}
+
+//---------------------------------------------------------------(3)
+
+
 function dishwasher([...arg]) {
     if (isNaN(arg[arg.length-1])) arg.pop()
 
