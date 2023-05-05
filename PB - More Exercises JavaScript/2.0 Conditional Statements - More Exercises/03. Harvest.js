@@ -4,7 +4,7 @@ function harvest([vineyard, kvM, necessaryWine, workers]) {
     let wineForWorkers = bonusWine / workers
  
     if (necessaryWine > allWine)
-        return `It will be a tough winter! More ${Math.abs(Math.trunc(bonusWine))} liters wine needed.`
+        return `It will be a tough winter! More ${Math.abs(~~bonusWine)} liters wine needed.`
     return `Good harvest this year! Total wine: ${~~allWine} liters.\n${Math.ceil(bonusWine)} liters left -> ${Math.ceil(wineForWorkers)} liters per person.`
 }
 
