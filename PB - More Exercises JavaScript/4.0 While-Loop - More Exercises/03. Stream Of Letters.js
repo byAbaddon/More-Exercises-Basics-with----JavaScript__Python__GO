@@ -1,5 +1,4 @@
 function streamOfLetters(arg) {
-   arg.pop()
    let wordCollection = ''
    let word = ''
    let [c, o, n] = [false, false, false]
