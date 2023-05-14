@@ -1,4 +1,4 @@
-function streamOfLetters([...arg]) {
+function streamOfLetters(arg) {
    arg.pop()
    let wordCollection = ''
    let word = ''
