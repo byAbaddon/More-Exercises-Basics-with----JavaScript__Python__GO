@@ -8,6 +8,8 @@ height -= rest
 rowCount = height / 120
 print(bureauCount * rowCount - 3)
 
+#---------------------------------------------(2)---------------------------------------
+print(int(float(input()) * 100 / 120) * int((float(input()) * 100 - 100) / 70) - 3)
 
 '''
 15
