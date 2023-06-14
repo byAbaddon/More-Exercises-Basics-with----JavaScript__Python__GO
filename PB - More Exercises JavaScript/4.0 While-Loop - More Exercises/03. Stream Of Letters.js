@@ -1,6 +1,5 @@
 arg =>  {
-  const code = ['c', 'n', 'o']
-  let word = ''
+  let [code, word] = [['c', 'n', 'o'], '']
   return arg.filter(x => /[a-zA-Z]/.test(x)).reduce((a, ch) => {   
     if (code.includes(ch)) code.splice(code.indexOf(ch), 1)
     else word += ch
