@@ -1,3 +1,22 @@
+arg =>  {
+  const code = ['c', 'n', 'o']
+  let word = ''
+  return arg.filter(x => /[a-zA-Z]/.test(x)).reduce((a, ch) => {   
+    if (code.includes(ch)) code.splice(code.indexOf(ch), 1)
+    else word += ch
+    if (!code.length) {
+        code.push('c', 'n', 'o');
+        a += word + ' '
+        word = ''
+    }
+      return a
+    }, '')
+}
+
+//-----------------------------------------(2)---------------------------------
+
+
+
 function streamOfLetters(arg) { 
   let [word, collection, code] = ['', '', ['c', 'n', 'o']]
   for (const ch of arg) {
@@ -14,7 +33,7 @@ function streamOfLetters(arg) {
   return collection
 }
 
-//--------------------------------------------(2)--------------------------------
+//--------------------------------------------(3)--------------------------------
 
 function streamOfLetters(arg) {
   let wordCollection = word = ''
