@@ -1,3 +1,21 @@
+function streamOfLetters(arg) { 
+  let [word, collection, code] = ['', '', ['c', 'n', 'o']]
+  for (const ch of arg) {
+    if(!ch.match(/[a-zA-Z]/)) continue
+    if (code.includes(ch)) code = code.filter(x => x != ch) 
+    else word += ch
+     
+    if (!code.length) {
+      code = ['c', 'n', 'o']
+      collection += word
+      word = ' '
+    }
+  }
+  return collection
+}
+
+//--------------------------------------------(2)--------------------------------
+
 function streamOfLetters(arg) {
   let wordCollection = word = ''
   let [c, o, n] = [false, false, false]
